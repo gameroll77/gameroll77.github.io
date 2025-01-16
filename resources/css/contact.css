@@ -81,6 +81,10 @@ body{
 }
 .logos img{
 width: 8vw;
+transition: 0.7s;
+}
+.logos img:hover{
+    transform: translateY(-10px);
 }
 .discord{
     grid-row: 1 / 2;

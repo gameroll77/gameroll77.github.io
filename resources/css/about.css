@@ -3,6 +3,9 @@
     src: url("../fonts/sp.ttf");
 }
 html{
+    overflow: hidden;
+}
+body{
     background-image: url("../images/fondo.png");
     background-size:100%;
     font-family:superpixel
@@ -139,3 +142,4 @@ h1{
     height: 80px;
     padding-top: 25px;
 }
+

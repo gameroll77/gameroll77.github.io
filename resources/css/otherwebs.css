@@ -59,7 +59,6 @@ h1{
 .info_container {
     display: flex;
     justify-content: space-between; 
-    align-items: center;
     gap: 5vw; 
 }
 
@@ -85,4 +84,9 @@ p a{
 }
 p a:hover{
     color: white !important;
+}
+.cano{
+    margin-left: 10vw;
+    margin-top: 4vh;
+    
 }
