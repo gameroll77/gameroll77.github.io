@@ -1,9 +1,36 @@
-html{
-    background-color: rgba(0, 0, 0, 0.87);
+
+
+html {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.664)), 
+                    url('../images/background.jpg');
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.menu{
-    resize: both;
-    overflow: auto;
+h1{
+    color:rgba(255, 255, 255, 0.623);
+    padding-top: 9vh;
+    padding-left: 25px;
+    
+}
+h2{
+    font-size: 1.3em;
+    color:rgba(255, 255, 255, 0.623);
+    
+}
+
+h3{
+    font-size: 1.1em;
+    color:rgba(255, 255, 255, 0.623);
+    
+}
+p{
+    font-size: 0.8em;
+  color:rgba(255, 255, 255, 0.623);  
+}
+a{
+    color:rgba(255, 255, 255, 0.623);   
+}
+.menu {
     position: absolute;
     height: 800px;
     width: 1000px;
@@ -11,18 +38,77 @@ html{
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 0px;
-     resize: both;
-    animation: 5s show ease-in;
     border: 5px solid #3d414c;
     border-style: double;
-    background: #111111;
+    background: #1b1b1b;
     z-index: 1;
-    user-select: none
+    user-select: none;
+    animation: 5s show ease-in;
+    overflow: hidden;
+    cursor: grab;
 }
-.menu-tabs{
+.menu.oculto {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+.menu.dragging {
+    cursor: grabbing;
+}
+.gradient-line {
+    background: linear-gradient(100deg, #45aaf2, #fc5c65, #fed330);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* Opcional: animación para que se mueva */
+.gradient-line.animated {
+    background: linear-gradient(100deg, #45aaf2, #fc5c65, #fed330, #45aaf2);
+    background-size: 200% 100%;
+    animation: gradientMove 3s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.resizer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background: #3d414c;
+    cursor: nwse-resize;
+    z-index: 2;
+}
+
+.menu-tabs {
+    grid-row: span 5 / span 5;
+    border-right: 2px solid #3d414c;
+    background: #111111;
+}
+
+.menu-single-tab {
+    grid-column: span 4 / span 4;
     grid-row: span 4 / span 4;
 }
-.menu-single-tab{
-     grid-column: span 4 / span 4;
-    grid-row: span 4 / span 4;
+
+.menu-container{
+ gap:20px   
 }
+
+.menu-item{
+background-color: #111111;
+padding: 20px;
+margin: 20px;
+border: 1px solid #3d414c;
+}
+
