@@ -1,199 +1,28 @@
-@font-face {
-    font-family: superpixel;
-    src: url("../fonts/sp.ttf");
+html{
+    background-color: rgba(0, 0, 0, 0.87);
 }
-
-html {
-    background-image: url("../images/fondo.png");
-    background-size: cover;
-    font-family: superpixel;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.intro-screen {
-    text-align: center;
+.menu{
+    resize: both;
+    overflow: auto;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 2s ease-out;
-    flex-direction: column;
+    height: 800px;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0px;
+     resize: both;
+    animation: 5s show ease-in;
+    border: 5px solid #3d414c;
+    border-style: double;
+    background: #111111;
+    z-index: 1;
+    user-select: none
 }
-
-.intro-screen .message h1 {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 20px;
+.menu-tabs{
+    grid-row: span 4 / span 4;
 }
-
-.intro-screen .message p {
-    font-size: 1rem;
-    color: white;
-    margin: 20px 0;
-}
-
-#start-button {
-    padding: 12px 25px;
-    font-size: 1.5rem;
-    background-color: #ff0000;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-family: superpixel;
-}
-
-#start-button:hover {
-    background-color: #ff5555;
-}
-
-.hidden-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 2s ease-out;
-}
-
-.show-content {
-    display: block;
-    opacity: 1;
-}
-
-/* Títulos */
-h1 {
-    font-size: 4em;
-    color: rgb(255, 0, 0);
-    text-align: center;
-    text-shadow: 4px 4px rgb(58, 6, 6);
-}
-
-/* Secciones principales */
-.sec_main {
-    background-color: rgba(0, 0, 0, 0.711);
-    padding: 15px;
-    width: 20%;
-    color: rgb(255, 0, 0);
-    border: 4px solid red;
-    margin-left: 3vw;
-    box-shadow: 3px 2px 3px 2px rgba(144, 0, 0, 0.78);
-}
-
-.sec_main a {
-    display: block;
-    color: rgb(255, 0, 0);
-    font-size: 2em;
-    text-decoration: none;
-    transition: 0.5s;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.sec_main a:hover {
-    color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-/* Contenedor */
-.container {
-    display: flex;
-    flex-wrap: wrap; /* Para permitir el ajuste en pantallas pequeñas */
-    justify-content: space-between;
-    width: 99vw;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-/* Información */
-.info {
-    background-color: rgba(0, 0, 0, 0.711);
-    padding: 4px;
-    width: 60%; /* Por defecto, ocupa el ancho completo */
-    color: rgb(240, 174, 174);
-    border: 4px solid red;
-    box-shadow: 3px 2px 3px 2px rgba(95, 2, 2, 0.78);
-    text-align: justify;
-    margin-top: 20px;
-}
-
-.info h2 {
-    text-align: center;
-    color: red;
-}
-
-.info_container {
-    display: flex;
-    flex-wrap: wrap; /* Ajusta el contenido en pantallas pequeñas */
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.texto {
-    flex: 1;
-    text-align: left;
-    margin: 0;
-    padding: 0 20px;
-}
-
-.right_info img {
-    max-width: 100%;
-    height: auto;
-    width: 300px;
-}
-
-p a {
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-p a:hover {
-    color: white !important;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;
-    }
-
-    .sec_main {
-        width: 100%;
-        margin-left: 0;
-        box-shadow: none;
-    }
-
-    .container {
-        flex-direction: row; /* Mantener el contenedor y menú uno al lado del otro */
-        gap: 20px;
-        justify-content: flex-start; /* Alinea el contenedor al lado izquierdo */
-    }
-
-    .info {
-        width: 100%;
-    }
-
-    .info_container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .texto {
-        padding: 0 10px;
-        text-align: center;
-    }
-
-    .right_info img {
-        width: 80%;
-    }
+.menu-single-tab{
+     grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
 }
