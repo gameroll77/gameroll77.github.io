@@ -11,17 +11,19 @@
     <div class="menu" id="menu_skeet">
         <div class="gradient-line"></div>
       
+        <!-- Navegación de pestañas -->
         <div class="menu-tabs">
-            <!-- Sections Changer -->
-            <h1 id ="home-section">Home</h1>
-            <h1 id ="home-section">My Projects</h1>
-            <h1 id ="home-section">Contact</h1>
+            <h1 class="tab-button active" data-section="home">Home</h1>
+            <h1 class="tab-button" data-section="projects">My Projects</h1>
+            <h1 class="tab-button" data-section="contact">Contact</h1>
             <br>
-            <h1 id ="home-section">Misc</h1>
-            
+            <h1 class="tab-button" data-section="misc">Misc</h1>
         </div>
-        <!-- Home Section -->
-        <div class="menu-single-tab">
+
+        <!-- Contenedor de secciones -->
+        <div class="sections-container">
+            <!-- Sección Home -->
+            <div class="section active" id="home-section">
                 <div class="menu-container">
                     <div class="menu-item">
                         <h2 style="text-align: center;">Welcome!</h2>
@@ -29,23 +31,74 @@
                         <p>Im gameroll / teto, a Website Developer and a tech enthusiast! </p>
                         <p>In this website you will find some information about me, and the projects i make! </p>
                         <p>Also i will be adding cool things as the time passes and i gain experience. </p>
-                        
                     </div>
-                     <div class="menu-item">
+                    <div class="menu-item">
                         <h3 style="text-align: center;">Hobbies</h3>
                         <p>When im not coding, i also spend some time playing videogames, especially CS2.<br>
                         While playing CS2, i have fun using cheats against another cheaters ( HvH ), and im a member of HvH community since 2018.<br> <br> Currently, im beeing part on the development of a CS2 Cheat ( Tetoware.cc )
                         </p>
                         <p>I am also into content creation. Actually i have a Youtube channel where i upload videos of hvh matches, to promote my CS2 cheats settings Market.</p>
                         <p>You can find my youtube Channel by clicking --> <a href="https://www.youtube.com/@dsrasHVH" target="_blank">here</a></p>
-                        <p>You can also  find my discord server by clicking --> <a href="https://discord.gg/tetocfgs" target="_blank">here</a></p>
+                        <p>You can also find my discord server by clicking --> <a href="https://discord.gg/tetocfgs" target="_blank">here</a></p>
                     </div> 
                     <div class="menu-item">
                         <h2 style="text-align:center">Website still under development!</h2>
                         <p>This Website is still on develpoment and will be probably for a long time! <br> <br> I invite you to explore the different tabs on the menu, and yes, this website is based on the gamesense.pub menu **Probably best CS2 cheat menu **</p>
                     </div>   
                 </div>
+            </div>
+
+            <!-- Sección Projects -->
+            <div class="section" id="projects-section">
+                <div class="menu-container">
+                    <div class="menu-item">
+                        <h2 style="text-align: center;">My Projects</h2>
+                        <div class="project-grid">
+                            <div class="project-card">
+                                <h3>Tetoware.cc</h3>
+                                <p>CS2 Cheat development project</p>
+                            </div>
+                            <div class="project-card">
+                                <h3>Personal Website</h3>
+                                <p>This interactive draggable website</p>
+                            </div>
+                             <div class="project-card">
+                                <a href="https://items-6f88c.web.app"><h3>Abracadabra Shop</h3>
+                                <p>A magic products ecommerce. <br> This is a simple project i made for class, its made using Firebase and Firestore to handle noSQL Database and user authentication, And html css with bootstrap for the design. <br> The backend is made with Javascript.</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Contact -->
+            <div class="section" id="contact-section">
+                <div class="menu-container">
+                    <div class="menu-item">
+                        <h2 style="text-align: center;">Contact Me</h2>
+                        <div class="contact-info">
+                            <p><strong>Discord:</strong> <a href="https://discord.gg/tetocfgs" target="_blank">tetocfgs</a></p>
+                            <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@dsrasHVH" target="_blank">@dsrasHVH</a></p>
+                            <p><strong>Email:</strong> dsras350@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Sección Misc -->
+            <div class="section" id="misc-section">
+                <div class="menu-container">
+                    <div class="menu-item-music">
+                        <img src="resources/images/cat.gif" style="height: 50x; width:50px;">
+                        <h2 style="text-align: center;">Music Player</h2>
+                        
+                    </div>
+                    
+                </div>
+            </div>
         </div>
+
         <div class="resizer"></div>
     </div>
     <script src="resources/scripts/script.js"></script>

@@ -1,15 +1,55 @@
-//Esconder el menu: 
+// Esconder el menu
 const menu = document.getElementById('menu_skeet');
 
 document.addEventListener('keydown', function(e) {
-    // 'Insert' puede ser detectado por e.key === 'Insert' o e.code === 'Insert'
     if (e.key === 'Insert' || e.code === 'Insert') {
         menu.classList.toggle('oculto');
     }
 });
 
+// Sistema de navegación por pestañas
+const tabButtons = document.querySelectorAll('.tab-button');
+const sections = document.querySelectorAll('.section');
 
-// Sistema de arrastre
+// Función para cambiar de sección
+function switchSection(targetSection) {
+    // Remover clase active de todas las pestañas y secciones
+    tabButtons.forEach(button => button.classList.remove('active'));
+    sections.forEach(section => section.classList.remove('active'));
+    
+    // Agregar clase active a la pestaña clickeada
+    const activeButton = document.querySelector(`[data-section="${targetSection}"]`);
+    const activeSection = document.getElementById(`${targetSection}-section`);
+    
+    if (activeButton && activeSection) {
+        activeButton.classList.add('active');
+        activeSection.classList.add('active');
+    }
+}
+
+// Event listeners para las pestañas
+tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const targetSection = this.getAttribute('data-section');
+        switchSection(targetSection);
+    });
+});
+
+// Navegación con teclado (opcional)
+document.addEventListener('keydown', function(e) {
+    const currentActiveButton = document.querySelector('.tab-button.active');
+    const currentIndex = Array.from(tabButtons).indexOf(currentActiveButton);
+    
+    if (e.key === 'ArrowRight' && currentIndex < tabButtons.length - 1) {
+        const nextSection = tabButtons[currentIndex + 1].getAttribute('data-section');
+        switchSection(nextSection);
+    } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        const prevSection = tabButtons[currentIndex - 1].getAttribute('data-section');
+        switchSection(prevSection);
+    }
+});
+
+// Sistema de arrastre (tu código existente)
 const draggableElement = document.getElementById('menu_skeet');
 let isDragging = false;
 let dragOffset = { x: 0, y: 0 };
@@ -26,7 +66,7 @@ document.addEventListener('mouseup', stopInteractions);
 document.addEventListener('mousemove', handleMovement);
 
 function startDrag(e) {
-    if (e.target === resizer) return;
+    if (e.target === resizer || e.target.classList.contains('tab-button')) return;
     isDragging = true;
     dragOffset = {
         x: e.clientX - draggableElement.offsetLeft,
