@@ -115,3 +115,57 @@ function stopInteractions() {
     isResizing = false;
     draggableElement.style.cursor = 'grab';
 }
+
+
+//Reproductor de musica:
+const tituloCancion = document.querySelector('.menu-item-music h3');
+const nombreArtista = document.querySelector('.menu-item-music p');
+
+const progreso = document.getElementById('progreso');
+const cancion = document.getElementById('cancion');
+
+const inconoControl = document.getElementById('iconoControl');
+const botonReproducirPausar = document.getElementById('botonReproducirPausar');
+
+const botonAtras = document.querySelector('.controles button.atras');
+const botonAdelante = document.querySelector('.controles button.adelante');
+
+const canciones =[
+    {
+        titulo:'Skeet Song',
+        nombre:' gamesense enjoyer',
+        fuente:'resources/songs/skeet.mp3'
+    }
+];
+let indiceCancionActual = 0;
+function actualizarInfoCancion(){
+    tituloCancion.textContent = canciones[indiceCancionActual].titulo;
+    nombreArtista.textContent = canciones[indiceCancionActual].nombre;
+    cancion.src = canciones[indiceCancionActual].fuente
+    cancion.addEventListener('loadeddata', function(){})
+
+};
+botonReproducirPausar.addEventListener('click', reproducirPausar);
+
+function reproducirPausar() {
+    if (cancion.paused) {
+        reproducirCancion();
+        inconoControl.classList.add('bi-pause-fill')
+        inconoControl.classList.remove('bi-play-fill')
+    } else {
+        pausarCancion();
+        inconoControl.classList.remove('bi-pause-fill')
+        inconoControl.classList.add('bi-play-fill')
+        
+    }
+}
+
+function reproducirCancion() {
+    cancion.play();
+}
+
+function pausarCancion() {
+    cancion.pause();
+}
+
+actualizarInfoCancion();

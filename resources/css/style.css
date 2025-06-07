@@ -1,6 +1,9 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 html {
     background-image: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.664)), 
                     url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
      overflow: hidden;
     height: 100vh;
@@ -333,9 +336,26 @@ a:hover {
     border: 1px solid #3d414c;
     border-radius: 8px;
     transition: all 0.3s ease;
-    gap:10px
+    gap: 80px;
 }
-
+.menu-item-music button{
+    color:aliceblue;
+    background-color: #3d414c;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.menu-item-music input{
+    color:aliceblue;
+    background-color: #3d414c;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.menu-item-music  h3, h2, p{
+    color:aliceblue;
+    margin: 10px;
+}
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .menu {
